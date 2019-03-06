@@ -48,7 +48,7 @@ class StaticPageGenerator {
               <meta charset="UTF-8">
               <meta name="viewport" content="width=device-width" />
               ${head || ''}
-              ${title ? `<title>${title}/title>` : ''}
+              ${title ? `<title>${title}</title>` : ''}
               ${Object.entries(compilation.assets)
                 .filter(p => p[0].endsWith('.css'))
                 .map(([href, css]) =>
