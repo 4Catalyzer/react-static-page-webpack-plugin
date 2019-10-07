@@ -54,7 +54,9 @@ class StaticPageGenerator {
                 .map(([href, css]) =>
                   inlineCss
                     ? `<style type="text/css">${css.source()}</style>`
-                    : `<link href="/${href}" rel="stylesheet">`,
+                    : `<link href="${
+                        compilation.outputOptions.publicPath
+                      }/${href}" rel="stylesheet">`,
                 )}
           </head>
             <body>
