@@ -1,4 +1,5 @@
 /* eslint-disable no-param-reassign */
+const path = require('path');
 const React = require('react');
 const evalModule = require('eval');
 const RawSource = require('webpack-sources/lib/RawSource');
@@ -54,7 +55,10 @@ class StaticPageGenerator {
                 .map(([href, css]) =>
                   inlineCss
                     ? `<style type="text/css">${css.source()}</style>`
-                    : `<link href="/${href}" rel="stylesheet">`,
+                    : `<link href="${path.join(
+                        compilation.outputOptions.publicPath || '/',
+                        href,
+                      )}" rel="stylesheet">`,
                 )}
           </head>
             <body>
