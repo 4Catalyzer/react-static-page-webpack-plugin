@@ -27,10 +27,7 @@
     }
   },
   "lint-staged": {
-    "*": [
-      "4c lint --fix",
-      "git add"
-    ]
+    "*": "4c lint --fix"
   },
   "jest": {
     "preset": "@4c/jest-preset",
