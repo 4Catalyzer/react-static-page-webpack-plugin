@@ -27,10 +27,7 @@
     }
   },
   "lint-staged": {
-    "*": [
-      "4c lint --fix",
-      "git add"
-    ]
+    "*": "4c lint --fix"
   },
   "jest": {
     "preset": "@4c/jest-preset",
@@ -50,7 +47,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.0.7",
     "jest": "^24.9.0",
-    "lint-staged": "^9.5.0",
+    "lint-staged": "^10.0.0",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
