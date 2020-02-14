@@ -1,10 +1,12 @@
 /* eslint-disable no-param-reassign */
+
 const path = require('path');
-const React = require('react');
-const evalModule = require('eval');
-const RawSource = require('webpack-sources/lib/RawSource');
 const { debuglog } = require('util');
+
+const evalModule = require('eval');
+const React = require('react');
 const { renderToStaticMarkup } = require('react-dom/server');
+const RawSource = require('webpack-sources/lib/RawSource');
 
 const debug = debuglog('ReactStaticPageWebpackPlugin');
 
