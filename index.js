@@ -27,7 +27,7 @@ class StaticPageGenerator {
   }
 
   apply(compiler) {
-    compiler.hooks.thisCompilation.tap(name, compilation => {
+    compiler.hooks.thisCompilation.tap(name, (compilation) => {
       if (compilation[PLUGIN_REFS] == null) compilation[PLUGIN_REFS] = 0;
 
       compilation[PLUGIN_REFS]++;
@@ -40,7 +40,7 @@ class StaticPageGenerator {
         const chunkName = this.chunk || Object.keys(json.assetsByChunkName)[0];
         let entryFile = json.assetsByChunkName[chunkName];
         if (Array.isArray(entryFile))
-          entryFile = entryFile.find(f => f.endsWith('.js'));
+          entryFile = entryFile.find((f) => f.endsWith('.js'));
 
         const component = evalModule(compilation.assets[entryFile].source());
 
@@ -53,7 +53,7 @@ class StaticPageGenerator {
               ${head || ''}
               ${title ? `<title>${title}</title>` : ''}
               ${Object.entries(compilation.assets)
-                .filter(p => p[0].endsWith('.css'))
+                .filter((p) => p[0].endsWith('.css'))
                 .map(([href, css]) =>
                   inlineCss
                     ? `<style type="text/css">${css.source()}</style>`
@@ -75,7 +75,7 @@ class StaticPageGenerator {
         `);
 
         if (compilation[PLUGIN_REFS] <= 0) {
-          json.assetsByChunkName[chunkName].forEach(asset => {
+          json.assetsByChunkName[chunkName].forEach((asset) => {
             if (asset.endsWith('.css')) return;
             debug('removing asset: ', asset);
             delete compilation.assets[asset];
