@@ -42,7 +42,10 @@ class StaticPageGenerator {
         if (Array.isArray(entryFile))
           entryFile = entryFile.find((f) => f.endsWith('.js'));
 
-        const component = evalModule(compilation.assets[entryFile].source());
+        const component = evalModule(
+          compilation.assets[entryFile].source(),
+          true,
+        );
 
         const src = new sources.RawSource(`<!DOCTYPE html>
 <html>
