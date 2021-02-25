@@ -1,6 +1,6 @@
 # ReactStaticPageWebpackPlugin
 
-A webpack that generates an html page from a react component
+A webpack plugin that generates an html page from a react component
 
 ## Usage
 
