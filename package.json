@@ -35,7 +35,7 @@
   },
   "release": {},
   "devDependencies": {
-    "@4c/cli": "^2.2.0",
+    "@4c/cli": "^4.0.4",
     "@4c/jest-preset": "^1.5.4",
     "@babel/preset-react": "^7.12.13",
     "eslint-config-4catalyzer": "^1.1.5",
